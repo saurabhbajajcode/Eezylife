@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet var homeView: HomeView!
+
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
@@ -17,6 +19,19 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupCalendarView()
+    }
+
+    fileprivate func setupCalendarView() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "EZCalendarScene")
+        self.addChild(vc)
+        let vcView = vc.view!
+        var frame = vcView.frame
+        frame.size.height = 149
+        vcView.frame = frame
+        homeView.tableView.tableHeaderView = vcView
+        homeView.layoutIfNeeded()
     }
 
     override func viewDidAppear(_ animated: Bool) {

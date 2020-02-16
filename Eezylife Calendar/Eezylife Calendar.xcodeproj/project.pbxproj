@@ -14,6 +14,7 @@
 		091FF74C23F5B04F00278E49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091FF74A23F5B04F00278E49 /* Main.storyboard */; };
 		091FF74E23F5B05600278E49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091FF74D23F5B05600278E49 /* Assets.xcassets */; };
 		091FF75123F5B05600278E49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091FF74F23F5B05600278E49 /* LaunchScreen.storyboard */; };
+		099A01B223F9571A001BB915 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A01B123F9571A001BB915 /* Extensions.swift */; };
 		09BE47E723F7175700535399 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE47E623F7175700535399 /* HomeView.swift */; };
 		09BE47E923F84DB700535399 /* CalenderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE47E823F84DB700535399 /* CalenderCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		091FF74D23F5B05600278E49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		091FF75023F5B05600278E49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		091FF75223F5B05600278E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		099A01B123F9571A001BB915 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		09BE47E623F7175700535399 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		09BE47E823F84DB700535399 /* CalenderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +64,7 @@
 		091FF74323F5B04F00278E49 /* Eezylife Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				099A01B023F956F0001BB915 /* Helpers */,
 				09BE47EB23F9113C00535399 /* Calendar */,
 				09BE47EA23F9111B00535399 /* Home */,
 				091FF74423F5B04F00278E49 /* AppDelegate.swift */,
@@ -72,6 +75,14 @@
 				091FF75223F5B05600278E49 /* Info.plist */,
 			);
 			path = "Eezylife Calendar";
+			sourceTree = "<group>";
+		};
+		099A01B023F956F0001BB915 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				099A01B123F9571A001BB915 /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		09BE47EA23F9111B00535399 /* Home */ = {
@@ -169,6 +180,7 @@
 				091FF74523F5B04F00278E49 /* AppDelegate.swift in Sources */,
 				09BE47E723F7175700535399 /* HomeView.swift in Sources */,
 				091FF74723F5B04F00278E49 /* SceneDelegate.swift in Sources */,
+				099A01B223F9571A001BB915 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LC268KRQ95;
 				INFOPLIST_FILE = "Eezylife Calendar/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LC268KRQ95;
 				INFOPLIST_FILE = "Eezylife Calendar/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

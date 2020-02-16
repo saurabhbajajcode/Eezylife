@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -12,7 +11,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Eezylife_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="HomeView" customModule="Eezylife_Calendar" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,11 +85,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="YJE-UX-714" firstAttribute="top" secondItem="2cO-Lc-c4E" secondAttribute="bottom" id="K6Q-5X-mbH"/>
                             <constraint firstItem="2cO-Lc-c4E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rll-Q3-dre"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YJE-UX-714" secondAttribute="bottom" id="VZu-qd-AHS"/>
                             <constraint firstItem="YJE-UX-714" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xj8-s8-3Me"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YJE-UX-714" secondAttribute="trailing" id="ciK-xq-Lix"/>
+                            <constraint firstItem="YJE-UX-714" firstAttribute="top" secondItem="2cO-Lc-c4E" secondAttribute="bottom" id="hl1-pU-1Mn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2cO-Lc-c4E" secondAttribute="trailing" id="ism-VO-88K"/>
                             <constraint firstItem="2cO-Lc-c4E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rFn-rv-9mC"/>
                         </constraints>
@@ -99,6 +98,9 @@
                             <outlet property="tableView" destination="YJE-UX-714" id="3B5-Cr-2e2"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="homeView" destination="8bC-Xf-vdC" id="9Rl-M8-1ie"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +117,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oE5-3k-ern">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YIs-zT-Ybo">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YIs-zT-Ybo">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -240,6 +242,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="39O-bI-XiK"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="YIs-zT-Ybo" id="A1k-Om-WOn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtB-wC-SYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
