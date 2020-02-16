@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
@@ -28,6 +28,4 @@ class ViewController: UIViewController {
             UIApplication.shared.keyWindow?.addSubview(statusBar)
         }
     }
-
 }
-
