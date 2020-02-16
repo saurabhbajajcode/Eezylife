@@ -15,6 +15,11 @@ class EZCalendarViewController: UIViewController {
         return symbols.shiftRight(amount: Calendar.current.firstWeekday)
     }()
 
+    fileprivate lazy var totalDays: Int = numberOfDaysInMonth(month: currentMonth)
+    fileprivate var currentMonth = Calendar.current.component(.month, from: Date())
+
+    fileprivate var selectedIndex: Int = 0
+
     @IBOutlet weak var collectionView: UICollectionView!
 
 
@@ -22,20 +27,29 @@ class EZCalendarViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
     }
 
-    func makeLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { (section: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1.0), heightDimension: NSCollectionLayoutDimension.absolute(44)))
-            item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),  heightDimension: .absolute(50))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
-            return section
-        }
-        return layout
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollToCurrentDay()
+    }
+
+    // MARK: Helpers
+    fileprivate func scrollToCurrentDay() {
+        let index = Calendar.current.component(.day, from: Date())
+        self.selectedIndex = index-1
+        let indexPath = IndexPath(row: index, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+    }
+
+    fileprivate func numberOfDaysInMonth(month: Int) -> Int {
+        var dateComponents = DateComponents()
+        dateComponents.year = Calendar.current.component(.year, from: Date())
+        dateComponents.month = month
+        // Set day as more than 1 to avoid timezone issues.
+        dateComponents.day = 2
+        let date = Calendar.current.date(from: dateComponents)!
+        return Calendar.current.range(of: .day, in: .month, for: date)?.count ?? 30
     }
 }
 
@@ -45,13 +59,26 @@ extension EZCalendarViewController: UICollectionViewDataSource, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return totalDays
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalenderCell", for: indexPath) as! CalenderCollectionViewCell
         cell.dateLabel.text = "\(indexPath.row+1)"
         cell.weekdayLabel.text = weekdaySymbols[indexPath.row%7]
+        if indexPath.row == selectedIndex {
+            // make cell as selected
+            cell.isSelected = true
+        } else {
+            // show cell as deselected
+            cell.isSelected = false
+        }
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+    }
+
+    
 }
