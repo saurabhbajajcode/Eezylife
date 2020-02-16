@@ -39,7 +39,15 @@ class EZCalendarViewController: UIViewController {
         let index = Calendar.current.component(.day, from: Date())
         self.selectedIndex = index-1
         let indexPath = IndexPath(row: index, section: 0)
-        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
+        updateCollectionViewOffset()
+    }
+
+    /// Sets collection view's content offset such a way that selected date is visible along with other days of the same week.
+    fileprivate func updateCollectionViewOffset() {
+        let pagesToOffset =  CGFloat(selectedIndex/7)
+        let offset = pagesToOffset * collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x: offset, y: 0), animated: false)
     }
 
     fileprivate func numberOfDaysInMonth(month: Int) -> Int {
@@ -80,5 +88,15 @@ extension EZCalendarViewController: UICollectionViewDataSource, UICollectionView
         self.selectedIndex = indexPath.row
     }
 
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentPage = Int((collectionView.contentOffset.x / collectionView.frame.width)+1)
+        if selectedIndex < currentPage*7 {
+            selectedIndex += 7
+        } else {
+            selectedIndex -= 7
+        }
+        let indexPath = IndexPath(row: selectedIndex, section: 0)
+        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
+        updateCollectionViewOffset()
+    }
 }

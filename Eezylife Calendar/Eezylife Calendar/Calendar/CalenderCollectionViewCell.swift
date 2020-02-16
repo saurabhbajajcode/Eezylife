@@ -31,7 +31,7 @@ class CalenderCollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        dotImageView.layer.cornerRadius = dotImageView.frame.height/2
+        dotImageView.layer.cornerRadius = 4
     }
 
 }
