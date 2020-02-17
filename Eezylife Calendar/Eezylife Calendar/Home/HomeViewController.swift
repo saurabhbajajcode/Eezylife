@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         self.addChild(vc)
         let vcView = vc.view!
         var frame = vcView.frame
-        frame.size.height = 149
+        frame.size.height = 108
         vcView.frame = frame
         homeView.tableView.tableHeaderView = vcView
         homeView.layoutIfNeeded()
