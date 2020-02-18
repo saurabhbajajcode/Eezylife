@@ -40,11 +40,10 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         setupCalendarView()
 
-        if #available(iOS 13, *)
-        {
-            let statusBar = UIView(frame: (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame)!)
+        if let keyWindow = (UIApplication.shared.windows.filter {$0.isKeyWindow}).first {
+            let statusBar = UIView(frame: (keyWindow.windowScene?.statusBarManager?.statusBarFrame)!)
             statusBar.backgroundColor = UIColor.black
-            UIApplication.shared.keyWindow?.addSubview(statusBar)
+            keyWindow.addSubview(statusBar)
         }
     }
 }
