@@ -14,6 +14,9 @@
 		091FF74C23F5B04F00278E49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091FF74A23F5B04F00278E49 /* Main.storyboard */; };
 		091FF74E23F5B05600278E49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091FF74D23F5B05600278E49 /* Assets.xcassets */; };
 		091FF75123F5B05600278E49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091FF74F23F5B05600278E49 /* LaunchScreen.storyboard */; };
+		095279BA23FBA0A800442F74 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095279B923FBA0A800442F74 /* PlanView.swift */; };
+		095279BD23FBAF7200442F74 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095279BC23FBAF7200442F74 /* ChatView.swift */; };
+		095279BF23FBC2D400442F74 /* HostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095279BE23FBC2D400442F74 /* HostView.swift */; };
 		099A01B223F9571A001BB915 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A01B123F9571A001BB915 /* Extensions.swift */; };
 		09BE47E723F7175700535399 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE47E623F7175700535399 /* HomeView.swift */; };
 		09BE47E923F84DB700535399 /* CalenderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE47E823F84DB700535399 /* CalenderCollectionViewCell.swift */; };
@@ -30,6 +33,9 @@
 		091FF74D23F5B05600278E49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		091FF75023F5B05600278E49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		091FF75223F5B05600278E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		095279B923FBA0A800442F74 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		095279BC23FBAF7200442F74 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		095279BE23FBC2D400442F74 /* HostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostView.swift; sourceTree = "<group>"; };
 		099A01B123F9571A001BB915 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		09BE47E623F7175700535399 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		09BE47E823F84DB700535399 /* CalenderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 				091FF74823F5B04F00278E49 /* HomeViewController.swift */,
 				09BE47E623F7175700535399 /* HomeView.swift */,
 				09F13E6023F98C530093CD97 /* HomeTableViewCell.swift */,
+				095279B923FBA0A800442F74 /* PlanView.swift */,
+				095279BC23FBAF7200442F74 /* ChatView.swift */,
+				095279BE23FBC2D400442F74 /* HostView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -178,7 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				09BE47E923F84DB700535399 /* CalenderCollectionViewCell.swift in Sources */,
+				095279BF23FBC2D400442F74 /* HostView.swift in Sources */,
 				091FF74923F5B04F00278E49 /* HomeViewController.swift in Sources */,
+				095279BD23FBAF7200442F74 /* ChatView.swift in Sources */,
+				095279BA23FBA0A800442F74 /* PlanView.swift in Sources */,
 				0914434C23F71051007C3F7A /* EZCalendarViewController.swift in Sources */,
 				091FF74523F5B04F00278E49 /* AppDelegate.swift in Sources */,
 				09BE47E723F7175700535399 /* HomeView.swift in Sources */,

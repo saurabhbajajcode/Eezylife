@@ -16,17 +16,14 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var expandedView: UIView!
     @IBOutlet weak var combinedImageView: UIImageView!
     @IBOutlet weak var collapsedViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var expandedViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var collapsedViewBottomConstraint: NSLayoutConstraint!
 
-     var isExpanded: Bool = false
+
+    var isExpanded: Bool = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        collapsedView.backgroundColor = UIColor.red
-//        expandedView.backgroundColor = UIColor.purple
-//        backgroundImageView.backgroundColor = UIColor.yellow
 
         backgroundImageView.contentMode = .topLeft
         backgroundImageView.clipsToBounds = true
@@ -37,10 +34,7 @@ class HomeTableViewCell: UITableViewCell {
         combinedImageView.layer.shadowOpacity = 0.2
 
         expandedView.isHidden = true
-        expandedViewHeightConstraint.constant = 0
     }
-
-
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -48,4 +42,6 @@ class HomeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
 
     }
+
+
 }

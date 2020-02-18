@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupCalendarView()
+//        setupCalendarView()
     }
 
     fileprivate func setupCalendarView() {
@@ -27,8 +27,10 @@ class HomeViewController: UIViewController {
         let vc = sb.instantiateViewController(withIdentifier: "EZCalendarScene")
         self.addChild(vc)
         let vcView = vc.view!
+//        vcView.translatesAutoresizingMaskIntoConstraints = false
         var frame = vcView.frame
-        frame.size.height = 108
+        frame.size.height = 149
+        frame.size.width = homeView.tableView.frame.size.width
         vcView.frame = frame
         homeView.tableView.tableHeaderView = vcView
         homeView.layoutIfNeeded()
@@ -36,6 +38,8 @@ class HomeViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setupCalendarView()
+
         if #available(iOS 13, *)
         {
             let statusBar = UIView(frame: (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame)!)
